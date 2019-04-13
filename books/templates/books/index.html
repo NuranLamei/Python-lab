@@ -1,0 +1,14 @@
+
+<html>
+<head>
+<title>{% block title %}Default title{% endblock %}</title>
+</head>
+<body>
+        this is a list of books
+<ul>
+{% for b in book %}
+           <li> <a href= "/books/bookdetails/{{b.title}}"> {{b.title}} </a> </li>
+{% endfor %}
+</ul>
+</body>
+</html>

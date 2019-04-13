@@ -1,0 +1,15 @@
+
+<html>
+        <head>
+          <title>{% block title %}Default title{% endblock %}</title>
+        </head>
+        <body>
+                <li>  {{author.auth_name}} </li>
+                    this is a list of books
+            <ul>
+                {% for b in books %}
+                    <li>  {{b.title}}  </li>
+                {% endfor %}
+            </ul>
+        </body>
+</html>

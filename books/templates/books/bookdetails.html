@@ -1,0 +1,26 @@
+{%load static%}
+<html>
+        <head>
+        <title>{% block title %}Default title{% endblock %}</title>
+        </head>
+        <body>
+               book details
+        <ul>    
+                
+                   <li> {{book.title}} </li>
+                   <li>{{book.author_id}} </li>
+                <li><a href= "{% url 'auth_details' book.author_id.auth_name %}"> {{book.author_id}} </a></li>
+
+                {% for c in comments %}
+                <li>  {{c.user}}  </li>
+                <li>  {{c.text}}  </li>
+                {% endfor %}
+
+        </ul>
+        <h2> Add a comment</h2>
+                <form method="POST"> {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="submit"></input>
+                </form>
+        </body>
+</html>
